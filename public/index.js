@@ -6,11 +6,20 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
-      message: "Welcome to Vue.js!"
+      message: "Welcome to Vue.js!",
     };
   },
-  created: function() {},
-  methods: {},
+  created: function() {
+    ('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+  },
+  methods: {
+
+    
+  },
   computed: {}
 };
 
